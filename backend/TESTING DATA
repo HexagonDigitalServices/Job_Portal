@@ -1,0 +1,32 @@
+{
+  "roleName": "Backend Developer",
+  "companyName": "Infosys",
+  "companyLogo": "",
+  "techStack": ["Node.js", "Express.js", "MongoDB"],
+  "location": "Bangalore",
+  "experience": "3 years",
+  "salary": 50000,
+  "salaryType": "/month",
+  "jobType": "full-time",
+  "postDate": "2026-04-21T00:00:00.000Z",
+  "category": "Development",
+  "openings": 3,
+  "overview": "We need a Backend Developer to design APIs, manage databases, and build secure server-side applications.",
+  "responsibilities": [
+    "Create and maintain REST APIs",
+    "Design database models and optimize queries",
+    "Implement authentication and authorization",
+    "Collaborate with frontend developers"
+  ],
+  "jobCriteria": [
+    "Good knowledge of Node.js and Express.js",
+    "Experience with MongoDB",
+    "Understanding of authentication systems",
+    "Problem-solving mindset"
+  ],
+  "education": [
+    "Bachelor's degree in Computer Science",
+    "Strong backend project experience is a plus"
+  ],
+  "status": "active"
+}
