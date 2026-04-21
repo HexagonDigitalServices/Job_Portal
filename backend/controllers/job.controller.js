@@ -40,26 +40,6 @@
             companyLogo = uploadRes.secure_url;
         }
 
-        const job = new Job({
-            companyLogo,
-            roleName,
-            companyName,
-            techStack,
-            location,
-            experience,
-            salary,
-            salaryType,
-            jobType,
-            postDate,
-            category,
-            openings,
-            overview,
-            responsibilities,
-            jobCriteria,
-            education,
-            postDate: postDateValue,
-            createdBy: req.user.id,
-        });
 
         //search by roleName, companyName, or techstack
         if (search) {
