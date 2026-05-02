@@ -203,8 +203,6 @@ const ImageUpload = ({ image, setImage, error }) => {
   );
 };
 
-const getTodayDate = () => new Date().toISOString().split("T")[0];
-
 const initialFormState = {
   image: null,
   roleName: "",
