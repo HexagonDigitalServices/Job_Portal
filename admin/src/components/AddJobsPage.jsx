@@ -312,11 +312,62 @@ const categories = [
 
         
                   
+                     <div className={s.salaryContainer}>
+              <label className={s.salaryLabel}>
+                Salary <span className={s.uploadRequired}>*</span>
+              </label>
+              <div className={s.salaryInputWrapper}>
+                <div
+                  className={`${s.salaryInputGroup} ${
+                    errors.salary
+                      ? s.salaryInputGroupError
+                      : formData.salary.amount
+                        ? s.salaryInputGroupFilled
+                        : s.salaryInputGroupDefault
+                  }`}
+                >
+                  <span className={s.salaryIconSpan}>
+                    <DollarSign
+                      size={18}
+                      className={
+                        formData.salary.amount ? s.salaryIconFilled : ""
+                      }
+                    />
+                  </span>
+                  <input
+                    type="number"
+                    value={formData.salary.amount}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        salary: { ...formData.salary, amount: e.target.value },
+                      })
+                    }
+                    className={s.salaryAmountInput}
+                    placeholder="80000"
+                  />
+                  <select
+                    value={formData.salary.period}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        salary: { ...formData.salary, period: e.target.value },
+                      })
+                    }
+                    className={s.salaryPeriodSelect}
+                  >
                     <option value="hour">/ hour</option>
                     <option value="day">/ day</option>
                     <option value="week">/ week</option>
                     <option value="month">/ month</option>
                     <option value="year">/ year</option>
+                  </select>
+                </div>
+                {errors.salary && (
+                  <p className={s.errorText}>{errors.salary}</p>
+                )}
+              </div>
+            </div>
                  
 
 
@@ -324,6 +375,139 @@ const categories = [
               <option value="part-time">Part-time</option>
               <option value="contract">Contract</option>
               <option value="internship">Internship</option>
+
+
+               {/* Responsibilities */}
+          <div className={s.arraySection}>
+            <label className={s.arrayLabel}>
+              <ListChecks size={16} className={s.uploadIcon} /> Responsibilities{" "}
+              <span className={s.uploadRequired}>*</span>
+            </label>
+            {formData.responsibilities.map((resp, index) => (
+              <div key={index} className={s.arrayItemRow}>
+                <input
+                  type="text"
+                  value={resp}
+                  onChange={(e) =>
+                    handleArrayChange("responsibilities", index, e.target.value)
+                  }
+                  className={`${s.arrayInput} ${
+                    errors.responsibilities && !resp.trim()
+                      ? s.arrayInputError
+                      : s.arrayInputDefault
+                  }`}
+                  placeholder="Develop new features..."
+                />
+                {formData.responsibilities.length > 1 && (
+                  <button
+                    type="button"
+                    onClick={() => removeArrayField("responsibilities", index)}
+                    className={s.removeBtn}
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => addArrayField("responsibilities")}
+              className={s.addBtn}
+            >
+              <Plus size={14} /> Add another responsibility
+            </button>
+            {errors.responsibilities && (
+              <p className={s.errorText}>{errors.responsibilities}</p>
+            )}
+          </div>
+
+          {/* Job Criteria */}
+          <div className={s.arraySection}>
+            <label className={s.arrayLabel}>
+              <ListChecks size={16} className={s.uploadIcon} /> Job Criteria{" "}
+              <span className={s.uploadRequired}>*</span>
+            </label>
+            {formData.jobCriteria.map((crit, index) => (
+              <div key={index} className={s.arrayItemRow}>
+                <input
+                  type="text"
+                  value={crit}
+                  onChange={(e) =>
+                    handleArrayChange("jobCriteria", index, e.target.value)
+                  }
+                  className={`${s.arrayInput} ${
+                    errors.jobCriteria && !crit.trim()
+                      ? s.arrayInputError
+                      : s.arrayInputDefault
+                  }`}
+                  placeholder="5+ years experience..."
+                />
+                {formData.jobCriteria.length > 1 && (
+                  <button
+                    type="button"
+                    onClick={() => removeArrayField("jobCriteria", index)}
+                    className={s.removeBtn}
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => addArrayField("jobCriteria")}
+              className={s.addBtn}
+            >
+              <Plus size={14} /> Add another criterion
+            </button>
+            {errors.jobCriteria && (
+              <p className={s.errorText}>{errors.jobCriteria}</p>
+            )}
+          </div>
+
+          {/* Education */}
+          <div className={s.arraySection}>
+            <label className={s.arrayLabel}>
+              <GraduationCap size={16} className={s.uploadIcon} /> Education{" "}
+              <span className={s.uploadRequired}>*</span>
+            </label>
+            {formData.education.map((edu, index) => (
+              <div key={index} className={s.arrayItemRow}>
+                <input
+                  type="text"
+                  value={edu}
+                  onChange={(e) =>
+                    handleArrayChange("education", index, e.target.value)
+                  }
+                  className={`${s.arrayInput} ${
+                    errors.education && !edu.trim()
+                      ? s.arrayInputError
+                      : s.arrayInputDefault
+                  }`}
+                  placeholder="Bachelor's in Computer Science"
+                />
+                {formData.education.length > 1 && (
+                  <button
+                    type="button"
+                    onClick={() => removeArrayField("education", index)}
+                    className={s.removeBtn}
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={() => addArrayField("education")}
+              className={s.addBtn}
+            >
+              <Plus size={14} /> Add another education requirement
+            </button>
+            {errors.education && (
+              <p className={s.errorText}>{errors.education}</p>
+            )}
+          </div>
           
       <style>{`
         @keyframes slideIn {
