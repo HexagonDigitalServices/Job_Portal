@@ -1,4 +1,4 @@
- if (data.success) {
+if (data.success) {
           const mapped = data.applicants.map((app) => ({
             id: app.applicationId,
             name: app.name,
@@ -21,7 +21,19 @@
     return `${day}/${month}/${year}`;
   };
 
- 
+  const handleViewResume = (resumeUrl, userId) => {
+    if (!resumeUrl) return;
+    const fullUrl = `http://localhost:5000/api/user/resume/${userId}`;
+    const link = document.createElement("a");
+    link.href = fullUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  
                             <svg
                               className={s.resumeIcon}
                               fill="none"
@@ -35,8 +47,8 @@
                                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                               />
                             </svg>
-                           
-
+                     
+                       
       <style>{`
         @keyframes gentleFadeUp {
           0% { opacity: 0; transform: translateY(8px); }
@@ -44,3 +56,4 @@
         }
         .group { animation: gentleFadeUp 0.45s ease-out forwards; opacity: 0; }
       `}</style>
+  
