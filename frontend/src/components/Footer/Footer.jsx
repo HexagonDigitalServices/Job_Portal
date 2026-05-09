@@ -11,6 +11,29 @@ const ContactItem = ({ icon, text, href }) => (
   </div>
 );
 
+     <div className={s.socialIconsContainer}>
+              <SocialIcon
+                href="#"
+                icon={<LuLinkedin className="w-4 h-4 sm:w-5 sm:h-5" />}
+                label="LinkedIn"
+              />
+              <SocialIcon
+                href="#"
+                icon={<LuTwitter className="w-4 h-4 sm:w-5 sm:h-5" />}
+                label="Twitter"
+              />
+              <SocialIcon
+                href="#"
+                icon={<LuFacebook className="w-4 h-4 sm:w-5 sm:h-5" />}
+                label="Facebook"
+              />{" "}
+              <SocialIcon
+                href="#"
+                icon={<LuInstagram className="w-4 h-4 sm:w-5 sm:h-5" />}
+                label="Instagram"
+              />
+            </div>
+
             <ul className={s.linkList}>
               <FooterLink
                 href="/jobs"
