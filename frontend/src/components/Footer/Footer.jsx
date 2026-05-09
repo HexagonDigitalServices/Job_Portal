@@ -1,3 +1,5 @@
+import { LuLinkedin,LuTwitter, LuFacebook, LuInstagram } from "react-icons/lu";
+
 const ContactItem = ({ icon, text, href }) => (
   <div className={s.contactItemContainer}>
     <div className={s.contactIconWrapper}>{icon}</div>
