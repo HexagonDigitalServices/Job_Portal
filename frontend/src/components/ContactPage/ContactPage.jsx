@@ -72,3 +72,56 @@
       </div>
     );
   };
+
+   
+                  <div>
+                    <h3 className={s.leftPanelTitle}>Let's Talk</h3>
+                    <p className={s.leftPanelDescription}>
+                      Have a project in mind or just want to chat? Reach out to
+                      us through any of these channels.
+                    </p>
+                    <div className={s.contactInfoList}>
+                      <div className={s.contactItem}>
+                        <div className={s.contactIconWrapper}>
+                          <MapPin className={s.mapIcon} />
+                        </div>
+                        <div>
+                          <p className={s.contactLabel}>Visit us</p>
+                          <p className={s.contactValue}>
+                            123 Business Ave, Suite 100
+                            <br />
+                            San Francisco, CA 94107
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className={s.contactItem}>
+                        <div className={s.contactIconWrapper}>
+                          <Mail className={s.mailIcon} />
+                        </div>
+                        <div>
+                          <p className={s.contactLabel}>Email us</p>
+                          <p className={s.contactValue}>
+                            hello@jobportal.com
+                            <br />
+                            support@jobportal.com
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className={s.contactItem}>
+                        <div className={s.contactIconWrapper}>
+                          <Phone className={s.phoneIcon} />
+                        </div>
+                        <div>
+                          <p className={s.contactLabel}>Call us</p>
+                          <p className={s.contactValue}>+1 (555) 123-4567</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={s.leftPanelFooter}>
+                    We typically reply within 1–2 business days.
+                  </div>
+             
